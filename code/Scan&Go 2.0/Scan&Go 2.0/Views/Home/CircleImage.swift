@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct CircleImage: View {
+    var imageName: String
+    
     var body: some View {
-        Image("sparLogo")
+        Image(imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 200, height: 200)
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
@@ -19,5 +24,5 @@ struct CircleImage: View {
 }
 
 #Preview {
-    CircleImage()
+    CircleImage(imageName: "sparLogo")
 }
