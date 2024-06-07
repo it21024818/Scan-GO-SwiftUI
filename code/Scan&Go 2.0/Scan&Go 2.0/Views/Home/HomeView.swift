@@ -20,7 +20,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             MapView(locations: locations, selectedLocation: $selectedLocation)
-                .frame(height: 400)
+                .frame(height: 380)
             
             if let location = selectedLocation {
                 CircleImage(imageName: location.imageName)
