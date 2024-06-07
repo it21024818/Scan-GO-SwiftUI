@@ -40,6 +40,11 @@ struct ContentView: View {
                     Image(systemName: "person.fill")
                     Text("Profile")
                 }
+//            LoginView()
+//                .tabItem {
+//                    Image(systemName: "person.fill")
+//                    Text("Login")
+//                }
         }
     }
 }
