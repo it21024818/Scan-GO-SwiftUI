@@ -33,6 +33,7 @@ struct HomeView: View {
 
                 Text("Contact No: 0115 007 200")
                     .font(.title2)
+                Spacer()
                 Text("Opening Hours: Monday - Sunday, 7am - 11pm")
             }
             .padding()

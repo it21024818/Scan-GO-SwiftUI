@@ -59,11 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C0752822C11AD7900DFE620 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthHeaderView.swift; path = "Scan&Go 2.0/Views/AuthViews/AuthHeaderView.swift"; sourceTree = SOURCE_ROOT; };
-		9C0752842C11AFE900DFE620 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = "Scan&Go 2.0/Views/AuthViews/CustomButton.swift"; sourceTree = SOURCE_ROOT; };
-		9C0752862C11B07300DFE620 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "Scan&Go 2.0/Views/AuthViews/CustomTextField.swift"; sourceTree = SOURCE_ROOT; };
-		9C0752882C11B49D00DFE620 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "Scan&Go 2.0/Views/AuthViews/LoginView.swift"; sourceTree = SOURCE_ROOT; };
-		9C07528A2C11B57B00DFE620 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterView.swift; path = "Scan&Go 2.0/Views/AuthViews/RegisterView.swift"; sourceTree = SOURCE_ROOT; };
+		9C0752822C11AD7900DFE620 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthHeaderView.swift; path = "Scan&Go 2.0/Views/Auth/AuthHeaderView.swift"; sourceTree = SOURCE_ROOT; };
+		9C0752842C11AFE900DFE620 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = "Scan&Go 2.0/Views/Auth/CustomButton.swift"; sourceTree = SOURCE_ROOT; };
+		9C0752862C11B07300DFE620 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "Scan&Go 2.0/Views/Auth/CustomTextField.swift"; sourceTree = SOURCE_ROOT; };
+		9C0752882C11B49D00DFE620 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "Scan&Go 2.0/Views/Auth/LoginView.swift"; sourceTree = SOURCE_ROOT; };
+		9C07528A2C11B57B00DFE620 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterView.swift; path = "Scan&Go 2.0/Views/Auth/RegisterView.swift"; sourceTree = SOURCE_ROOT; };
 		9C07528D2C11B68200DFE620 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		9C07528F2C11B6E900DFE620 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C0752912C11B72F00DFE620 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		9CB1FE2B2BFA79100086AA7A /* Scan&Go 2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Scan&Go 2.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB1FE2F2BFA79100086AA7A /* Scan_Go_2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_2_0UITests.swift; sourceTree = "<group>"; };
 		9CB1FE312BFA79100086AA7A /* Scan_Go_2_0UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_2_0UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9CB1FE412BFA7D130086AA7A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "Scan&Go 2.0/Views/HomeViews/HomeView.swift"; sourceTree = SOURCE_ROOT; };
+		9CB1FE412BFA7D130086AA7A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "Scan&Go 2.0/Views/Home/HomeView.swift"; sourceTree = SOURCE_ROOT; };
 		9CB1FE432BFA7D5F0086AA7A /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroceryListView.swift; path = "Scan&Go 2.0/GroceryListView.swift"; sourceTree = SOURCE_ROOT; };
 		9CB1FE452BFA7DAB0086AA7A /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScanView.swift; path = "Scan&Go 2.0/ScanView.swift"; sourceTree = SOURCE_ROOT; };
 		9CB1FE472BFA7DEB0086AA7A /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartView.swift; path = "Scan&Go 2.0/CartView.swift"; sourceTree = SOURCE_ROOT; };
@@ -121,7 +121,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C07528C2C11B5C400DFE620 /* AuthViews */ = {
+		9C07528C2C11B5C400DFE620 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				9C0752842C11AFE900DFE620 /* CustomButton.swift */,
@@ -131,7 +131,7 @@
 				9C07528A2C11B57B00DFE620 /* RegisterView.swift */,
 				9C07528D2C11B68200DFE620 /* ForgotPasswordView.swift */,
 			);
-			path = AuthViews;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		9CB1FE032BFA79090086AA7A = {
@@ -200,8 +200,8 @@
 		9CB1FE3E2BFA7C890086AA7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9CC507E22C1356110077ED03 /* HomeViews */,
-				9C07528C2C11B5C400DFE620 /* AuthViews */,
+				9CC507E22C1356110077ED03 /* Home */,
+				9C07528C2C11B5C400DFE620 /* Auth */,
 				9CB1FE432BFA7D5F0086AA7A /* GroceryListView.swift */,
 				9CB1FE452BFA7DAB0086AA7A /* ScanView.swift */,
 				9CB1FE472BFA7DEB0086AA7A /* CartView.swift */,
@@ -211,14 +211,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9CC507E22C1356110077ED03 /* HomeViews */ = {
+		9CC507E22C1356110077ED03 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				9CB1FE412BFA7D130086AA7A /* HomeView.swift */,
 				9CC507E32C13563C0077ED03 /* MapView.swift */,
 				9CC507E52C1356540077ED03 /* CircleImage.swift */,
 			);
-			path = HomeViews;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		9CCB495E2C048E5800C98AD2 /* Models */ = {
