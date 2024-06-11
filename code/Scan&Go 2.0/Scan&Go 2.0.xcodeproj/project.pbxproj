@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C0752832C11AD7900DFE620 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752822C11AD7900DFE620 /* AuthHeaderView.swift */; };
-		9C0752852C11AFE900DFE620 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752842C11AFE900DFE620 /* CustomButton.swift */; };
-		9C0752872C11B07300DFE620 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752862C11B07300DFE620 /* CustomTextField.swift */; };
 		9C0752892C11B49D00DFE620 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752882C11B49D00DFE620 /* LoginView.swift */; };
 		9C07528B2C11B57B00DFE620 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C07528A2C11B57B00DFE620 /* RegisterView.swift */; };
 		9C07528E2C11B68200DFE620 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C07528D2C11B68200DFE620 /* ForgotPasswordView.swift */; };
 		9C0752902C11B6E900DFE620 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C07528F2C11B6E900DFE620 /* User.swift */; };
-		9C0752922C11B72F00DFE620 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752912C11B72F00DFE620 /* LoginUserRequest.swift */; };
-		9C0752942C11B74A00DFE620 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752932C11B74A00DFE620 /* RegisterUserRequest.swift */; };
-		9C0752962C11B82C00DFE620 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752952C11B82C00DFE620 /* AuthService.swift */; };
 		9C0752982C11B85800DFE620 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0752972C11B85800DFE620 /* Validator.swift */; };
 		9C07529A2C11BB8000DFE620 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0752992C11BB8000DFE620 /* FirebaseAuth */; };
 		9C07529C2C11BC1300DFE620 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9C07529B2C11BC1300DFE620 /* FirebaseFirestore */; };
+		9C61ACFE2C187092004439AD /* Scan_Go_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61ACFD2C187092004439AD /* Scan_Go_WatchApp.swift */; };
+		9C61AD002C187092004439AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61ACFF2C187092004439AD /* ContentView.swift */; };
+		9C61AD022C187096004439AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C61AD012C187096004439AD /* Assets.xcassets */; };
+		9C61AD052C187096004439AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C61AD042C187096004439AD /* Preview Assets.xcassets */; };
+		9C61AD0F2C187096004439AD /* Scan_Go_Watch_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61AD0E2C187096004439AD /* Scan_Go_Watch_Watch_AppTests.swift */; };
+		9C61AD192C187097004439AD /* Scan_Go_Watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61AD182C187097004439AD /* Scan_Go_Watch_Watch_AppUITests.swift */; };
+		9C61AD1B2C187097004439AD /* Scan_Go_Watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61AD1A2C187097004439AD /* Scan_Go_Watch_Watch_AppUITestsLaunchTests.swift */; };
+		9C61AD1E2C187097004439AD /* Scan&Go-Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C61ACFB2C187092004439AD /* Scan&Go-Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C7552A22C145A9200F818CE /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7552A12C145A9200F818CE /* KeychainHelper.swift */; };
+		9C7552A52C145AE600F818CE /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 9C7552A42C145AE600F818CE /* KeychainAccess */; };
 		9C9C7EF12C1392AF00A8875C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7EF02C1392AF00A8875C /* Location.swift */; };
 		9CB1FE102BFA790A0086AA7A /* Scan_Go_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE0F2BFA790A0086AA7A /* Scan_Go_2_0App.swift */; };
 		9CB1FE122BFA790A0086AA7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE112BFA790A0086AA7A /* ContentView.swift */; };
@@ -43,6 +47,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9C61AD0B2C187096004439AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CB1FE042BFA79090086AA7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C61ACFA2C187092004439AD;
+			remoteInfo = "Scan&Go-Watch Watch App";
+		};
+		9C61AD152C187097004439AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CB1FE042BFA79090086AA7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C61ACFA2C187092004439AD;
+			remoteInfo = "Scan&Go-Watch Watch App";
+		};
+		9C61AD1C2C187097004439AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CB1FE042BFA79090086AA7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C61ACFA2C187092004439AD;
+			remoteInfo = "Scan&Go-Watch Watch App";
+		};
 		9CB1FE222BFA79100086AA7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9CB1FE042BFA79090086AA7A /* Project object */;
@@ -59,18 +84,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9C61AD1F2C187097004439AD /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9C61AD1E2C187097004439AD /* Scan&Go-Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		9C0752822C11AD7900DFE620 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthHeaderView.swift; path = "Scan&Go 2.0/Views/Auth/AuthHeaderView.swift"; sourceTree = SOURCE_ROOT; };
-		9C0752842C11AFE900DFE620 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = "Scan&Go 2.0/Views/Auth/CustomButton.swift"; sourceTree = SOURCE_ROOT; };
-		9C0752862C11B07300DFE620 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "Scan&Go 2.0/Views/Auth/CustomTextField.swift"; sourceTree = SOURCE_ROOT; };
 		9C0752882C11B49D00DFE620 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "Scan&Go 2.0/Views/Auth/LoginView.swift"; sourceTree = SOURCE_ROOT; };
 		9C07528A2C11B57B00DFE620 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterView.swift; path = "Scan&Go 2.0/Views/Auth/RegisterView.swift"; sourceTree = SOURCE_ROOT; };
 		9C07528D2C11B68200DFE620 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		9C07528F2C11B6E900DFE620 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9C0752912C11B72F00DFE620 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
-		9C0752932C11B74A00DFE620 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
-		9C0752952C11B82C00DFE620 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9C0752972C11B85800DFE620 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		9C61ACFB2C187092004439AD /* Scan&Go-Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scan&Go-Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C61ACFD2C187092004439AD /* Scan_Go_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_WatchApp.swift; sourceTree = "<group>"; };
+		9C61ACFF2C187092004439AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9C61AD012C187096004439AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C61AD042C187096004439AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9C61AD0A2C187096004439AD /* Scan&Go-Watch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Scan&Go-Watch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C61AD0E2C187096004439AD /* Scan_Go_Watch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_Watch_Watch_AppTests.swift; sourceTree = "<group>"; };
+		9C61AD142C187097004439AD /* Scan&Go-Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Scan&Go-Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C61AD182C187097004439AD /* Scan_Go_Watch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_Watch_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		9C61AD1A2C187097004439AD /* Scan_Go_Watch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_Watch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C7552A12C145A9200F818CE /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		9C9C7EF02C1392AF00A8875C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9CB1FE0C2BFA790A0086AA7A /* Scan&Go 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scan&Go 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB1FE0F2BFA790A0086AA7A /* Scan_Go_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_Go_2_0App.swift; sourceTree = "<group>"; };
@@ -97,12 +141,34 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9C61ACF82C187092004439AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C61AD072C187096004439AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C61AD112C187097004439AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CB1FE092BFA79090086AA7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9C07529A2C11BB8000DFE620 /* FirebaseAuth in Frameworks */,
 				9C07529C2C11BC1300DFE620 /* FirebaseFirestore in Frameworks */,
+				9C7552A52C145AE600F818CE /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,14 +192,55 @@
 		9C07528C2C11B5C400DFE620 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				9C0752842C11AFE900DFE620 /* CustomButton.swift */,
-				9C0752822C11AD7900DFE620 /* AuthHeaderView.swift */,
-				9C0752862C11B07300DFE620 /* CustomTextField.swift */,
 				9C0752882C11B49D00DFE620 /* LoginView.swift */,
 				9C07528A2C11B57B00DFE620 /* RegisterView.swift */,
 				9C07528D2C11B68200DFE620 /* ForgotPasswordView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		9C61ACFC2C187092004439AD /* Scan&Go-Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				9C61ACFD2C187092004439AD /* Scan_Go_WatchApp.swift */,
+				9C61ACFF2C187092004439AD /* ContentView.swift */,
+				9C61AD012C187096004439AD /* Assets.xcassets */,
+				9C61AD032C187096004439AD /* Preview Content */,
+			);
+			path = "Scan&Go-Watch Watch App";
+			sourceTree = "<group>";
+		};
+		9C61AD032C187096004439AD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9C61AD042C187096004439AD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9C61AD0D2C187096004439AD /* Scan&Go-Watch Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C61AD0E2C187096004439AD /* Scan_Go_Watch_Watch_AppTests.swift */,
+			);
+			path = "Scan&Go-Watch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		9C61AD172C187097004439AD /* Scan&Go-Watch Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C61AD182C187097004439AD /* Scan_Go_Watch_Watch_AppUITests.swift */,
+				9C61AD1A2C187097004439AD /* Scan_Go_Watch_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Scan&Go-Watch Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		9C7552A02C145A6100F818CE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9C7552A12C145A9200F818CE /* KeychainHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		9C9C7EEF2C138F5A00A8875C /* Scanner */ = {
@@ -152,6 +259,9 @@
 				9CB1FE0E2BFA790A0086AA7A /* Scan&Go 2.0 */,
 				9CB1FE242BFA79100086AA7A /* Scan&Go 2.0Tests */,
 				9CB1FE2E2BFA79100086AA7A /* Scan&Go 2.0UITests */,
+				9C61ACFC2C187092004439AD /* Scan&Go-Watch Watch App */,
+				9C61AD0D2C187096004439AD /* Scan&Go-Watch Watch AppTests */,
+				9C61AD172C187097004439AD /* Scan&Go-Watch Watch AppUITests */,
 				9CB1FE0D2BFA790A0086AA7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +272,9 @@
 				9CB1FE0C2BFA790A0086AA7A /* Scan&Go 2.0.app */,
 				9CB1FE212BFA79100086AA7A /* Scan&Go 2.0Tests.xctest */,
 				9CB1FE2B2BFA79100086AA7A /* Scan&Go 2.0UITests.xctest */,
+				9C61ACFB2C187092004439AD /* Scan&Go-Watch Watch App.app */,
+				9C61AD0A2C187096004439AD /* Scan&Go-Watch Watch AppTests.xctest */,
+				9C61AD142C187097004439AD /* Scan&Go-Watch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +282,7 @@
 		9CB1FE0E2BFA790A0086AA7A /* Scan&Go 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				9C7552A02C145A6100F818CE /* Helper */,
 				9CCB495E2C048E5800C98AD2 /* Models */,
 				9CB1FE3E2BFA7C890086AA7A /* Views */,
 				9CB1FE0F2BFA790A0086AA7A /* Scan_Go_2_0App.swift */,
@@ -176,7 +290,6 @@
 				9CB1FE182BFA790F0086AA7A /* Persistence.swift */,
 				9CB1FE1A2BFA790F0086AA7A /* Scan_Go_2_0.xcdatamodeld */,
 				9CB1FE152BFA790F0086AA7A /* Preview Content */,
-				9C0752952C11B82C00DFE620 /* AuthService.swift */,
 				9C0752972C11B85800DFE620 /* Validator.swift */,
 			);
 			path = "Scan&Go 2.0";
@@ -236,8 +349,6 @@
 			children = (
 				9CCB495F2C048F0900C98AD2 /* ScanViewModel.swift */,
 				9C07528F2C11B6E900DFE620 /* User.swift */,
-				9C0752912C11B72F00DFE620 /* LoginUserRequest.swift */,
-				9C0752932C11B74A00DFE620 /* RegisterUserRequest.swift */,
 				9C9C7EF02C1392AF00A8875C /* Location.swift */,
 			);
 			path = Models;
@@ -246,6 +357,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9C61ACFA2C187092004439AD /* Scan&Go-Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C61AD262C187097004439AD /* Build configuration list for PBXNativeTarget "Scan&Go-Watch Watch App" */;
+			buildPhases = (
+				9C61ACF72C187092004439AD /* Sources */,
+				9C61ACF82C187092004439AD /* Frameworks */,
+				9C61ACF92C187092004439AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Scan&Go-Watch Watch App";
+			productName = "Scan&Go-Watch Watch App";
+			productReference = 9C61ACFB2C187092004439AD /* Scan&Go-Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C61AD092C187096004439AD /* Scan&Go-Watch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C61AD272C187097004439AD /* Build configuration list for PBXNativeTarget "Scan&Go-Watch Watch AppTests" */;
+			buildPhases = (
+				9C61AD062C187096004439AD /* Sources */,
+				9C61AD072C187096004439AD /* Frameworks */,
+				9C61AD082C187096004439AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C61AD0C2C187096004439AD /* PBXTargetDependency */,
+			);
+			name = "Scan&Go-Watch Watch AppTests";
+			productName = "Scan&Go-Watch Watch AppTests";
+			productReference = 9C61AD0A2C187096004439AD /* Scan&Go-Watch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C61AD132C187097004439AD /* Scan&Go-Watch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C61AD282C187097004439AD /* Build configuration list for PBXNativeTarget "Scan&Go-Watch Watch AppUITests" */;
+			buildPhases = (
+				9C61AD102C187097004439AD /* Sources */,
+				9C61AD112C187097004439AD /* Frameworks */,
+				9C61AD122C187097004439AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C61AD162C187097004439AD /* PBXTargetDependency */,
+			);
+			name = "Scan&Go-Watch Watch AppUITests";
+			productName = "Scan&Go-Watch Watch AppUITests";
+			productReference = 9C61AD142C187097004439AD /* Scan&Go-Watch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9CB1FE0B2BFA79090086AA7A /* Scan&Go 2.0 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CB1FE352BFA79100086AA7A /* Build configuration list for PBXNativeTarget "Scan&Go 2.0" */;
@@ -253,15 +417,18 @@
 				9CB1FE082BFA79090086AA7A /* Sources */,
 				9CB1FE092BFA79090086AA7A /* Frameworks */,
 				9CB1FE0A2BFA79090086AA7A /* Resources */,
+				9C61AD1F2C187097004439AD /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9C61AD1D2C187097004439AD /* PBXTargetDependency */,
 			);
 			name = "Scan&Go 2.0";
 			packageProductDependencies = (
 				9C0752992C11BB8000DFE620 /* FirebaseAuth */,
 				9C07529B2C11BC1300DFE620 /* FirebaseFirestore */,
+				9C7552A42C145AE600F818CE /* KeychainAccess */,
 			);
 			productName = "Scan&Go 2.0";
 			productReference = 9CB1FE0C2BFA790A0086AA7A /* Scan&Go 2.0.app */;
@@ -313,6 +480,17 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					9C61ACFA2C187092004439AD = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					9C61AD092C187096004439AD = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9C61ACFA2C187092004439AD;
+					};
+					9C61AD132C187097004439AD = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9C61ACFA2C187092004439AD;
+					};
 					9CB1FE0B2BFA79090086AA7A = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -337,6 +515,7 @@
 			mainGroup = 9CB1FE032BFA79090086AA7A;
 			packageReferences = (
 				9CCB49652C049F6000C98AD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9C7552A32C145AE600F818CE /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 9CB1FE0D2BFA790A0086AA7A /* Products */;
 			projectDirPath = "";
@@ -345,11 +524,37 @@
 				9CB1FE0B2BFA79090086AA7A /* Scan&Go 2.0 */,
 				9CB1FE202BFA79100086AA7A /* Scan&Go 2.0Tests */,
 				9CB1FE2A2BFA79100086AA7A /* Scan&Go 2.0UITests */,
+				9C61ACFA2C187092004439AD /* Scan&Go-Watch Watch App */,
+				9C61AD092C187096004439AD /* Scan&Go-Watch Watch AppTests */,
+				9C61AD132C187097004439AD /* Scan&Go-Watch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9C61ACF92C187092004439AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C61AD052C187096004439AD /* Preview Assets.xcassets in Resources */,
+				9C61AD022C187096004439AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C61AD082C187096004439AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C61AD122C187097004439AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CB1FE0A2BFA79090086AA7A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,17 +582,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9C61ACF72C187092004439AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C61AD002C187092004439AD /* ContentView.swift in Sources */,
+				9C61ACFE2C187092004439AD /* Scan_Go_WatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C61AD062C187096004439AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C61AD0F2C187096004439AD /* Scan_Go_Watch_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C61AD102C187097004439AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C61AD192C187097004439AD /* Scan_Go_Watch_Watch_AppUITests.swift in Sources */,
+				9C61AD1B2C187097004439AD /* Scan_Go_Watch_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CB1FE082BFA79090086AA7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C0752872C11B07300DFE620 /* CustomTextField.swift in Sources */,
-				9C0752852C11AFE900DFE620 /* CustomButton.swift in Sources */,
 				9CB1FE462BFA7DAB0086AA7A /* ScanView.swift in Sources */,
 				9C07528E2C11B68200DFE620 /* ForgotPasswordView.swift in Sources */,
 				9C0752892C11B49D00DFE620 /* LoginView.swift in Sources */,
-				9C0752922C11B72F00DFE620 /* LoginUserRequest.swift in Sources */,
-				9C0752962C11B82C00DFE620 /* AuthService.swift in Sources */,
 				9C9C7EF12C1392AF00A8875C /* Location.swift in Sources */,
 				9CB1FE4A2BFA7E0F0086AA7A /* ProfileView.swift in Sources */,
 				9CB1FE192BFA790F0086AA7A /* Persistence.swift in Sources */,
@@ -397,14 +624,13 @@
 				9CB1FE122BFA790A0086AA7A /* ContentView.swift in Sources */,
 				9CB1FE442BFA7D5F0086AA7A /* GroceryListView.swift in Sources */,
 				9CB1FE1C2BFA790F0086AA7A /* Scan_Go_2_0.xcdatamodeld in Sources */,
-				9C0752942C11B74A00DFE620 /* RegisterUserRequest.swift in Sources */,
 				9CB1FE422BFA7D130086AA7A /* HomeView.swift in Sources */,
 				9CC507E62C1356540077ED03 /* CircleImage.swift in Sources */,
 				9C0752982C11B85800DFE620 /* Validator.swift in Sources */,
-				9C0752832C11AD7900DFE620 /* AuthHeaderView.swift in Sources */,
 				9C0752902C11B6E900DFE620 /* User.swift in Sources */,
 				9C07528B2C11B57B00DFE620 /* RegisterView.swift in Sources */,
 				9CB1FE482BFA7DEB0086AA7A /* CartView.swift in Sources */,
+				9C7552A22C145A9200F818CE /* KeychainHelper.swift in Sources */,
 				9CB1FE102BFA790A0086AA7A /* Scan_Go_2_0App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +655,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9C61AD0C2C187096004439AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C61ACFA2C187092004439AD /* Scan&Go-Watch Watch App */;
+			targetProxy = 9C61AD0B2C187096004439AD /* PBXContainerItemProxy */;
+		};
+		9C61AD162C187097004439AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C61ACFA2C187092004439AD /* Scan&Go-Watch Watch App */;
+			targetProxy = 9C61AD152C187097004439AD /* PBXContainerItemProxy */;
+		};
+		9C61AD1D2C187097004439AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C61ACFA2C187092004439AD /* Scan&Go-Watch Watch App */;
+			targetProxy = 9C61AD1C2C187097004439AD /* PBXContainerItemProxy */;
+		};
 		9CB1FE232BFA79100086AA7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9CB1FE0B2BFA79090086AA7A /* Scan&Go 2.0 */;
@@ -442,6 +683,148 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9C61AD202C187097004439AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Scan&Go-Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = XSD44FJ89N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scan&Go-Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "MADD.Scan-Go-2-0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MADD.Scan-Go-2-0.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		9C61AD212C187097004439AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Scan&Go-Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = XSD44FJ89N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scan&Go-Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "MADD.Scan-Go-2-0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MADD.Scan-Go-2-0.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		9C61AD222C187097004439AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSD44FJ89N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MADD.Scan-Go-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scan&Go-Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Scan&Go-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		9C61AD232C187097004439AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSD44FJ89N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MADD.Scan-Go-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scan&Go-Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Scan&Go-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		9C61AD242C187097004439AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSD44FJ89N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MADD.Scan-Go-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Scan&Go-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		9C61AD252C187097004439AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSD44FJ89N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MADD.Scan-Go-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Scan&Go-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 		9CB1FE332BFA79100086AA7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -564,6 +947,7 @@
 		9CB1FE362BFA79100086AA7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -573,7 +957,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to use your camera for barcode scanning";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -595,6 +979,7 @@
 		9CB1FE372BFA79100086AA7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -604,7 +989,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to use your camera for barcode scanning";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -702,6 +1087,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9C61AD262C187097004439AD /* Build configuration list for PBXNativeTarget "Scan&Go-Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C61AD202C187097004439AD /* Debug */,
+				9C61AD212C187097004439AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C61AD272C187097004439AD /* Build configuration list for PBXNativeTarget "Scan&Go-Watch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C61AD222C187097004439AD /* Debug */,
+				9C61AD232C187097004439AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C61AD282C187097004439AD /* Build configuration list for PBXNativeTarget "Scan&Go-Watch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C61AD242C187097004439AD /* Debug */,
+				9C61AD252C187097004439AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9CB1FE072BFA79090086AA7A /* Build configuration list for PBXProject "Scan&Go 2.0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -741,6 +1153,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9C7552A32C145AE600F818CE /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9CCB49652C049F6000C98AD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -761,6 +1181,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9CCB49652C049F6000C98AD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		9C7552A42C145AE600F818CE /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C7552A32C145AE600F818CE /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 

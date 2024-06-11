@@ -1,92 +1,93 @@
-////
-////  RegisterView.swift
-////  Scan&Go 2.0
-////
-////  Created by Dinuka Dissanayake on 6/6/24.
-////
 //
-//import SwiftUI
+//  RegisterView.swift
+//  Scan&Go 2.0
 //
-//struct RegisterView: View {
-//    @State private var username: String = ""
-//    @State private var email: String = ""
-//    @State private var password: String = ""
-//    @State private var showAlert = false
-//    @State private var alertMessage = ""
-//    
-//    var body: some View {
-//        NavigationView {
-//            VStack {
-//                AuthHeaderView(title: "Sign Up", subTitle: "Create your account")
-//                
-//                CustomTextField(fieldType: .username, text: $username)
-//                CustomTextField(fieldType: .email, text: $email)
-//                CustomTextField(fieldType: .password, text: $password)
-//                
-//                CustomButton(title: "Sign Up", hasBackground: true) {
-//                    signUp()
-//                }
-//                
-//                Text("By creating an account, you agree to our ")
-//                    .foregroundColor(.gray) +
-//                Link("Terms & Conditions", destination: URL(string: "https://policies.google.com/terms?hl=en")!)
-//                    .foregroundColor(.blue) +
-//                Text(" and acknowledge that you have read our ") +
-//                Link("Privacy Policy", destination: URL(string: "https://policies.google.com/privacy?hl=en")!)
-//                    .foregroundColor(.blue)
-//                
-//                Spacer()
-//            }
-//            .padding()
-//            .navigationBarHidden(true)
-//            .alert(isPresented: $showAlert) {
-//                Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-//            }
-//        }
-//    }
-//    
-//    private func signUp() {
-//        let registerUserRequest = RegisterUserRequest(
-//            username: self.username,
-//            email: self.email,
-//            password: self.password
-//        )
-//        
-//        // Username check
-//        if !Validator.isValidUsername(for: registerUserRequest.username) {
-//            showAlert(message: "Invalid username format.")
-//            return
-//        }
-//        
-//        // Email check
-//        if !Validator.isValidEmail(for: registerUserRequest.email) {
-//            showAlert(message: "Invalid email format.")
-//            return
-//        }
-//        
-//        // Password check
-//        if !Validator.isPasswordValid(for: registerUserRequest.password) {
-//            showAlert(message: "Invalid password.")
-//            return
-//        }
-//        
-//        AuthService.shared.registerUser(with: registerUserRequest) { wasRegistered, error in
-//            if let error = error {
-//                showAlert(message: error.localizedDescription)
-//                return
-//            }
-//            
-//            if wasRegistered {
-//                // Handle successful registration
-//                // For example, navigate to a different view
-//            } else {
-//                showAlert(message: "Registration failed.")
-//            }
-//        }
-//    }
-//    
-//    private func showAlert(message: String) {
-//        alertMessage = message
-//        showAlert = true
-//    }
-//}
+//  Created by Dinuka Dissanayake on 6/6/24.
+//
+
+import SwiftUI
+import FirebaseAuth
+
+struct RegisterView: View {
+    @StateObject private var user = User()
+    @State private var isRegistered = false
+
+    var body: some View {
+        VStack {
+            // App Icon
+            Image("scan&goIcon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                .padding(.top, 10)
+
+            // Sign in label
+            Text("Sign up")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 20)
+            
+            TextField("Full Name", text: $user.fullName)
+                .padding()
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(5)
+            
+            TextField("Email", text: $user.email)
+                .padding()
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(5)
+            
+            SecureField("Password", text: $user.password)
+                .padding()
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(5)
+            
+            Button(action: register) {
+                Text("Sign up")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity)
+            }
+            .padding(.horizontal)
+            .padding(.top)
+            
+            if !user.errorMessage.isEmpty {
+                Text(user.errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
+            if isRegistered {
+                Text("Registration successful! Please log in.")
+                    .foregroundColor(.green)
+                    .padding()
+            }
+        }
+        .padding()
+    }
+    
+    func register() {
+        if user.isValid() {
+            Auth.auth().createUser(withEmail: user.email, password: user.password) { authResult, error in
+                if let error = error {
+                    user.errorMessage = error.localizedDescription
+                } else {
+                    if let firebaseUser = authResult?.user {
+                        let changeRequest = firebaseUser.createProfileChangeRequest()
+                        changeRequest.displayName = user.fullName
+                        changeRequest.commitChanges { error in
+                            if let error = error {
+                                user.errorMessage = error.localizedDescription
+                            } else {
+                                isRegistered = true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

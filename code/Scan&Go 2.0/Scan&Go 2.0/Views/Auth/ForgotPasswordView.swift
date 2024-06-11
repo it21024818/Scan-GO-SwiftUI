@@ -1,55 +1,71 @@
-////
-////  ForgotPasswordView.swift
-////  Scan&Go 2.0
-////
-////  Created by Dinuka Dissanayake on 6/6/24.
-////
 //
-//import SwiftUI
+//  ForgotPasswordView.swift
+//  Scan&Go 2.0
 //
-//struct ForgotPasswordView: View {
-//    @State private var email: String = ""
-//    @State private var showAlert = false
-//    @State private var alertMessage = ""
-//    
-//    var body: some View {
-//        VStack {
-//            AuthHeaderView(title: "Forgot Password", subTitle: "Reset your password")
-//            
-//            CustomTextField(text: $email, placeholder: "Email")
-//            
-//            CustomButton(title: "Reset Password") {
-//                resetPassword()
-//            }
-//            
-//            Spacer()
-//        }
-//        .padding()
-//        .navigationBarHidden(true)
-//        .alert(isPresented: $showAlert) {
-//            Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-//        }
-//    }
-//    
-//    private func resetPassword() {
-//        if !Validator.isValidEmail(for: email) {
-//            showAlert(message: "Invalid email format.")
-//            return
-//        }
-//        
-//        AuthService.shared.forgotPassword(with: email) { [weak self] error in
-//            guard let self = self else { return }
-//            if let error = error {
-//                showAlert(message: error.localizedDescription)
-//                return
-//            }
-//            
-//            showAlert(message: "Password reset email sent successfully.")
-//        }
-//    }
-//    
-//    private func showAlert(message: String) {
-//        alertMessage = message
-//        showAlert = true
-//    }
-//}
+//  Created by Dinuka Dissanayake on 6/6/24.
+//
+import SwiftUI
+import FirebaseAuth
+
+struct ForgotPasswordView: View {
+    @State private var email = ""
+    @State private var errorMessage = ""
+    @State private var isEmailSent = false
+
+    var body: some View {
+        VStack {
+            // App Icon
+            Image("scan&goIcon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                .padding(.top, 10)
+
+            // Sign in label
+            Text("Reset password")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 20)
+            
+            TextField("Email", text: $email)
+                .padding()
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(5)
+            
+            Button(action: resetPassword) {
+                Text("Reset Password")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity)
+            }
+            .padding(.top)
+            
+            if !errorMessage.isEmpty {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
+            if isEmailSent {
+                Text("Password reset email sent!")
+                    .foregroundColor(.green)
+                    .padding()
+            }
+        }
+        .padding()
+    }
+    
+    func resetPassword() {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                errorMessage = error.localizedDescription
+            } else {
+                isEmailSent = true
+            }
+        }
+    }
+}
+

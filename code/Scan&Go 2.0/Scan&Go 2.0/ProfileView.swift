@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ProfileView: View {
+    @EnvironmentObject var user: User
+    @State private var showLogin = false
+
     var body: some View {
         NavigationView {
             VStack {
@@ -20,11 +24,11 @@ struct ProfileView: View {
                         .padding(.leading)
                     
                     VStack(alignment: .leading) {
-                        Text("John Doe")
+                        Text(user.fullName)
                             .font(.title)
                             .fontWeight(.bold)
                         
-                        Text("johndoe@example.com")
+                        Text(user.email)
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -72,12 +76,13 @@ struct ProfileView: View {
                 
                 // Sign Out Button
                 Button(action: {
-                    // Sign out action
+                    user.signOut()
+                    showLogin = true
                 }) {
                     Text("Sign Out")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.orange)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
@@ -86,7 +91,11 @@ struct ProfileView: View {
                 
                 // Delete Account Button
                 Button(action: {
-                    // Delete account action
+                    user.deleteAccount { error in
+                        if error == nil {
+                            showLogin = true
+                        }
+                    }
                 }) {
                     Text("Delete Account")
                         .frame(maxWidth: .infinity)
@@ -99,6 +108,10 @@ struct ProfileView: View {
                 Spacer()
             }
             .navigationTitle("Profile")
+            .fullScreenCover(isPresented: $showLogin) {
+                LoginView()
+                    .environmentObject(user)
+            }
         }
     }
 }

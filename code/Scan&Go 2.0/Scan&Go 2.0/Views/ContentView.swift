@@ -14,37 +14,36 @@ struct ContentView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
+                        .foregroundColor(.orange)
                     Text("Home")
                 }
 
             GroceryListView()
                 .tabItem {
                     Image(systemName: "list.bullet")
+                        .foregroundColor(.orange)
                     Text("Grocery List")
                 }
 
             ScanView()
                 .tabItem {
-                    Image(systemName: "barcode.viewfinder")
+                    Image(systemName: "barcode.viewfinder").foregroundColor(.orange)
                     Text("Scan")
                 }
 
             CartView()
                 .tabItem {
                     Image(systemName: "cart.fill")
+                        .foregroundColor(.orange)
                     Text("Cart")
                 }
 
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
+                        .foregroundColor(.orange)
                     Text("Profile")
                 }
-//            LoginView()
-//                .tabItem {
-//                    Image(systemName: "person.fill")
-//                    Text("Login")
-//                }
         }
     }
 }
