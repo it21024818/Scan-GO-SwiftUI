@@ -7,10 +7,9 @@
 #### 03. What is unique about your solution - Focus on a clean and user-friendly interface for a smooth shopping experience.
 #### 04. Briefly document the functionality of the screens you have (Include screen shots of images)
 
-Screen 1: Login/Registration
+Screen 1: Login/ Registration/ Forgot Password
 
-![IMG_5369](https://github.com/SE4020/SE4020-Assignment1-it21024818/assets/87381428/5d2a6e7b-ce5f-4f05-887c-13907b1dc44e)
-![IMG_5370](https://github.com/SE4020/SE4020-Assignment1-it21024818/assets/87381428/8d0d027b-6354-4630-9944-593690a63a43)
+![WhatsApp Image 2024-06-12 at 3 55 06 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/cfa65567-e79b-4382-98ca-606b79604315)
 
 Functionality: Users can either login with existing credentials or create a new account.
 UI Components: Text fields for username/password or email/password, buttons for login and registration.
