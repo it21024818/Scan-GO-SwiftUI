@@ -13,7 +13,7 @@ Screen 1: Login/ Registration/ Forgot Password
 ![WhatsApp Image 2024-06-12 at 3 55 08 PM (1)](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/65b926fe-4d4b-4b35-bd25-278e9d269dfc)
 ![WhatsApp Image 2024-06-12 at 3 55 08 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/b7fc97d1-e55b-4366-9595-2b60c9a50d48)
 
-Functionality: Users can either login with existing credentials or create a new account.
+Functionality: Users can either login with existing credentials or create a new account. In addition, keychain access is integrated so that users credentials can be saved in the keychain and access the applicatoin using biometrics.
 UI Components: Text fields for username/password or email/password, buttons for login and registration.
 
 Screen 2: Home Page
@@ -55,157 +55,259 @@ UI Components: Lists, Picker, TextFields, etc.
 #### 05. Give examples of best practices used when writing code
 Error Handling: Implement proper error handling mechanisms to gracefully handle unexpected situations during scanning, payment processing, etc.
 ```
-extension AlertManager {
+// Validator class for validating user input
+class Validator {
     
-    public static func showInvalidEmailAlert(on vc: UIViewController) {
-        self.showBasicAlert(on: vc, title: "Invalid Email", message: "Please enter a valid email.")
+    // Validate email format
+    static func isValidEmail(for email: String) -> Bool {
+        let email = email.trimmingCharacters(in: .whitespacesAndNewlines)
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.{1}[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
-    public static func showInvalidPasswordAlert(on vc: UIViewController) {
-        self.showBasicAlert(on: vc, title: "Invalid Password", message: "Please enter a valid password.")
+    // Validate username format
+    static func isValidUsername(for username: String) -> Bool {
+        let username = username.trimmingCharacters(in: .whitespacesAndNewlines)
+        let usernameRegEx = "\\w{4,24}"
+        let usernamePred = NSPredicate(format: "SELF MATCHES %@", usernameRegEx)
+        return usernamePred.evaluate(with: username)
     }
     
-    public static func showInvalidUsernameAlert(on vc: UIViewController) {
-        self.showBasicAlert(on: vc, title: "Invalid Username", message: "Please enter a valid username.")
+    // Validate password format
+    static func isPasswordValid(for password: String) -> Bool {
+        let password = password.trimmingCharacters(in: .whitespacesAndNewlines)
+        let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$#!%*?&]).{6,32}$"
+        let passwordPred = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+        return passwordPred.evaluate(with: password)
     }
 }
 ```
 
 Descriptive Naming Conventions: Use clear and concise variable and function names that reflect their purpose (e.g., scannedProducts, calculateTotal).
 ```
-AuthService.shared.registerUser(with: registerUserRequest) { [weak self] wasRegistered, error in
-    guard let self = self else { return }
-    
-    if let error = error {
-        AlertManager.showRegistrationErrorAlert(on: self, with: error)
-        return
-    }
-    
-    if wasRegistered {
-        if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
-            sceneDelegate.checkAuthentication()
+    private var bottomContainerView: some View {
+        VStack {
+            headerView
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 16) {
+                    ForEach(vm.recognizedItems) { item in
+                        switch item {
+                        case .barcode(let barcode):
+                            Text(barcode.payloadStringValue ?? "Unknown barcode")
+                            
+                        case .text(let text):
+                            Text(text.transcript)
+                            
+                        @unknown default:
+                            Text("Unknown")
+                        }
+                    }
+                }
+                .padding()
+            }
         }
-    } else {
-        AlertManager.showRegistrationErrorAlert(on: self)
     }
-}
 ```
 
 Modular Code: Break down the code into well-defined functions and classes for better organization and maintainability.
 ```
-struct CartItem {
-    let image: UIImage
+struct Location: Identifiable {
+    let id = UUID()
     let name: String
-    let price: Double
-    let description: String
-    var quantity: Int
+    let address: String
+    let city: String
+    let contactNo: String
+    let openingHours: String
+    let coordinate: CLLocationCoordinate2D
+    let imageName: String 
 }
+
 ```
 
 Code Comments: Add comments to explain complex logic and improve code readability for future reference.
 ```
-// Ensure the detected metadata type is supported (e.g., EAN13, QR)
-guard let barcode = metadataObject.stringValue else {
-    // If metadata type is not supported, do nothing
-    return
-}
-
-// Print the scanned barcode to the console
-print("Scanned Barcode: \(barcode)")
-
-// Display the scanned barcode on the screen
-DispatchQueue.main.async {
-    let alertController = UIAlertController(title: "Scanned Barcode", message: barcode, preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-    self.present(alertController, animated: true, completion: nil)
-}
+    // Function to handle user registration
+    func register() {
+        // Validate user input
+        if user.isValid() {
+            // Create user with Firebase Authentication
+            Auth.auth().createUser(withEmail: user.email, password: user.password) { authResult, error in
+                if let error = error {
+                    user.errorMessage = error.localizedDescription
+                } else {
+                    if let firebaseUser = authResult?.user {
+                        // Update user profile with full name
+                        let changeRequest = firebaseUser.createProfileChangeRequest()
+                        changeRequest.displayName = user.fullName
+                        changeRequest.commitChanges { error in
+                            if let error = error {
+                                user.errorMessage = error.localizedDescription
+                            } else {
+                                // Set registration status to true
+                                isRegistered = true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 ```
 
 #### 06. UI Components used
 
-~ UIButton: Buttons for login, registration, adding items, checkout, etc.
-~ UITextfield: Text fields for username, password, email, etc.
-~ UIImageView: To display promotional images on the home screen.
-~ UITableView: To display a list of scanned items in the cart screen.
-~ UINavigationController: Manages navigation between different screens within the app.
+~ Button: Buttons for login, registration, adding items, checkout, etc.
+~ TextField: Text fields for username, password, email, etc.
+~ Text: To display labels.
+~ Image: To display promotional images on the home screen.
+~ VStack: To display a list of scanned items in the cart screen.
+~ NavigationView: Manages navigation between different screens within the app.
+~ Map: To display locations in a map view.
 
 #### 07. Testing carried out
 
-Unit Testing: Focus on testing core functionalities like user login, product information retrieval, and basic calculations. 
+Unit Testing: Focus on testing core functionalities for total calculations. 
 ```
-    func testLogin() throws {
-        let expectation = self.expectation(description: "Login")
-
-        let loginUserRequest = LoginUserRequest(email: "testUser@test.com", password: "testPassword")
-        authService.signIn(with: loginUserRequest) { error in
-            XCTAssertNil(error, "Login should succeed with valid credentials")
-            expectation.fulfill()
-        }
-
-        waitForExpectations(timeout: 5, handler: nil)
+    func testTotalPriceCalculation() {
+        // Given
+        let cartItems: [CartItem] = [
+            CartItem(image: Image("butter"), name: "Anchor Butter", price: 400.00, description: "This is item 1", quantity: 1),
+            CartItem(image: Image("juice"), name: "Orange Juice", price: 290.00, description: "This is item 2", quantity: 2),
+        ]
+        let cartView = CartView(cartItems: cartItems)
+        
+        // When
+        let totalPrice = cartView.totalPrice()
+        
+        // Then
+        XCTAssertEqual(totalPrice, "LKR 980.00")
     }
 
-    func testLoginWithInvalidCredentials() throws {
-        let expectation = self.expectation(description: "Invalid Login")
-
-        let loginUserRequest = LoginUserRequest(email: "invalidUser@gmail.com", password: "invalidPassword")
-        authService.signIn(with: loginUserRequest) { error in
-            XCTAssertNotNil(error, "Login should fail with invalid credentials")
-            expectation.fulfill()
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
         }
-
-        waitForExpectations(timeout: 5, handler: nil)
     }
 ```
 
 UI Testing: Automate tests to validate user interface elements like button clicks, field validation, error messages, and overall checkout flow. 
 ```
-    func testRegisterFieldValidation() throws {
-        let app = XCUIApplication()
-        app.launch()
+    func testLoginSuccess() throws {
+        // Navigate to the Login screen if not already there
+        XCTAssertTrue(app.navigationBars["Login"].exists)
 
-        let usernameField = app.textFields["Username"]
-        let emailField = app.textFields["Email Address"]
-        let passwordField = app.secureTextFields["Password"]
-        let registerButton = app.buttons["Sign Up"]
+        // Fill in email and password fields
+        let emailTextField = app.textFields["Email"]
+        XCTAssertTrue(emailTextField.exists)
+        emailTextField.tap()
+        emailTextField.typeText("test@example.com")
 
-        // Enter invalid data into the text fields
-        usernameField.tap()
-        usernameField.typeText("")
+        let passwordTextField = app.secureTextFields["Password"]
+        XCTAssertTrue(passwordTextField.exists)
+        passwordTextField.tap()
+        passwordTextField.typeText("testpassword")
 
-        emailField.tap()
-        emailField.typeText("invalidEmail")
+        // Tap on the sign in button
+        let signInButton = app.buttons["Sign in"]
+        XCTAssertTrue(signInButton.exists)
+        signInButton.tap()
 
-        passwordField.tap()
-        passwordField.typeText("short")
-
-        // Tap the register button
-        registerButton.tap()
-
-        // Check if the appropriate error message is displayed
-        XCTAssertTrue(app.staticTexts["Please enter a valid username, email, and password."].exists)
+        // Assert that the next screen is loaded after successful login
+        XCTAssertTrue(app.navigationBars["NextScreen"].exists) // Replace "NextScreen" with the identifier of the next screen
     }
 
-    func testLoginErrorMessage() throws {
-        let app = XCUIApplication()
-        app.launch()
+    func testLoginFailure() throws {
+        // Navigate to the Login screen if not already there
+        XCTAssertTrue(app.navigationBars["Login"].exists)
 
-        let usernameField = app.textFields["Username"]
-        let passwordField = app.secureTextFields["Password"]
-        let loginButton = app.buttons["Log In"]
+        // Fill in incorrect email and password fields
+        let emailTextField = app.textFields["Email"]
+        XCTAssertTrue(emailTextField.exists)
+        emailTextField.tap()
+        emailTextField.typeText("invalid@example.com")
 
-        // Enter invalid data into the text fields
-        usernameField.tap()
-        usernameField.typeText("invalidUser")
+        let passwordTextField = app.secureTextFields["Password"]
+        XCTAssertTrue(passwordTextField.exists)
+        passwordTextField.tap()
+        passwordTextField.typeText("invalidpassword")
 
-        passwordField.tap()
-        passwordField.typeText("invalidPassword")
+        // Tap on the sign in button
+        let signInButton = app.buttons["Sign in"]
+        XCTAssertTrue(signInButton.exists)
+        signInButton.tap()
 
-        // Tap the login button
-        loginButton.tap()
+        // Assert that appropriate error message is displayed
+        XCTAssertTrue(app.staticTexts["Invalid email or password."].exists)
+    }
+    
+    func testRegistrationSuccess() throws {
+        // Navigate to the Register screen if not already there
+        XCTAssertTrue(app.navigationBars["Sign up"].exists)
 
-        // Check if the appropriate error message is displayed
-        XCTAssertTrue(app.staticTexts["Invalid username or password."].exists)
+        // Fill in registration fields
+        let fullNameTextField = app.textFields["Full Name"]
+        XCTAssertTrue(fullNameTextField.exists)
+        fullNameTextField.tap()
+        fullNameTextField.typeText("John Doe")
+
+        let emailTextField = app.textFields["Email"]
+        XCTAssertTrue(emailTextField.exists)
+        emailTextField.tap()
+        emailTextField.typeText("test@example.com")
+
+        let passwordTextField = app.secureTextFields["Password"]
+        XCTAssertTrue(passwordTextField.exists)
+        passwordTextField.tap()
+        passwordTextField.typeText("testpassword")
+
+        // Tap on the sign up button
+        let signUpButton = app.buttons["Sign up"]
+        XCTAssertTrue(signUpButton.exists)
+        signUpButton.tap()
+
+        // Assert that the success message is displayed after successful registration
+        XCTAssertTrue(app.staticTexts["Registration successful! Please log in."].exists)
+    }
+
+    func testRegistrationFailure() throws {
+        // Navigate to the Register screen if not already there
+        XCTAssertTrue(app.navigationBars["Sign up"].exists)
+
+        // Fill in registration fields with invalid data
+        let fullNameTextField = app.textFields["Full Name"]
+        XCTAssertTrue(fullNameTextField.exists)
+        fullNameTextField.tap()
+        fullNameTextField.typeText("")
+
+        let emailTextField = app.textFields["Email"]
+        XCTAssertTrue(emailTextField.exists)
+        emailTextField.tap()
+        emailTextField.typeText("invalidemail")
+
+        let passwordTextField = app.secureTextFields["Password"]
+        XCTAssertTrue(passwordTextField.exists)
+        passwordTextField.tap()
+        passwordTextField.typeText("short")
+
+        // Tap on the sign up button
+        let signUpButton = app.buttons["Sign up"]
+        XCTAssertTrue(signUpButton.exists)
+        signUpButton.tap()
+
+        // Assert that appropriate error message is displayed
+        XCTAssertTrue(app.staticTexts["Invalid email or password."].exists)
+    }
+
+
+    func testLaunchPerformance() throws {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+            // This measures how long it takes to launch your application.
+            measure(metrics: [XCTApplicationLaunchMetric()]) {
+                XCUIApplication().launch()
+            }
+        }
     }
 ```
 
@@ -230,9 +332,12 @@ Firebase for Authentication:
 ~Firebase offers a user-friendly and scalable solution for user login and registration.
 ~Considered alternatives like custom backend development but Firebase simplified the process.
 
-Third-Party Barcode Scanner Library:
+VisionKit for Barcode Scanner:
 ~Integrated a pre-built barcode scanning library to save development time and ensure accuracy.
 ~Evaluated building a custom scanner but the library offered faster implementation.
+
+MapKit for Map View:
+~Integrated the MapKit to display the locations of the stores.
 
 (c) Challenges
 
@@ -246,7 +351,7 @@ Data Security and User Privacy:
 
 #### 09. Reflection
 
-~Implement additional features like shopping list creation and loyalty program integration.
+~Implement additional features like loyalty program integration.
 ~Enhance the user interface with animations and micro-interactions for a more polished experience.
 ~Explore integrating with the supermarket's backend systems for real-time product information and inventory updates.
 
