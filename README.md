@@ -25,7 +25,7 @@ UI Components: MapKit to dispkay the locations, button to view the details of th
 
 Screen 3: Barcode Scanner
 
-blob:https://web.whatsapp.com/7f35ff77-7dac-4390-91a3-861e9e3cd01d![image](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/88e4dc59-b8b1-4cb9-815c-0841c5324dfd)
+![WhatsApp Image 2024-06-12 at 4 02 12 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/d25a9132-1108-46a7-89bd-def1b0ac76f3)
 
 Functionality: Users scan product barcodes as well as texts using the phone's camera. The app retrieves product information and adds it to the cart upon confirmation.
 UI Components: Camera viewfinder, confirmation button to add scanned item.
