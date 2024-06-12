@@ -18,28 +18,27 @@ struct ForgotPasswordView: View {
             Image("scan&goIcon")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 100)
+                .frame(width: 200, height: 200)
                 .clipShape(Circle())
-                .padding(.top, 10)
 
             // Sign in label
             Text("Reset password")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top, 20)
             
             TextField("Email", text: $email)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(5)
+                .frame(width: 350)
             
             Button(action: resetPassword) {
                 Text("Reset Password")
                     .foregroundColor(.white)
                     .padding()
+                    .frame(width: 350)
                     .background(Color.orange)
                     .cornerRadius(10)
-                    .frame(maxWidth: .infinity)
             }
             .padding(.top)
             
@@ -55,7 +54,7 @@ struct ForgotPasswordView: View {
                     .padding()
             }
         }
-        .padding()
+        .padding(.top, -300)
     }
     
     func resetPassword() {

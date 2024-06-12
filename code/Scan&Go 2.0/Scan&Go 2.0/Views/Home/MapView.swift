@@ -5,36 +5,23 @@
 //  Created by Dinuka Dissanayake on 6/7/24.
 //
 
-//import SwiftUI
-//import MapKit
-//
-//struct MapView: View {
-//    var body: some View {
-//        Map(initialPosition: .region(region))
-//    }
-//
-//    private var region: MKCoordinateRegion {
-//        MKCoordinateRegion(
-//            center: CLLocationCoordinate2D(latitude: 6.882728996369276, longitude: 79.93445813475586),
-//            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-//        )
-//    }
-//}
-//
-//#Preview {
-//    MapView()
-//}
-
 import SwiftUI
 import MapKit
 
+// View for displaying a map with locations
 struct MapView: View {
+    
+    // Array of locations
     let locations: [Location]
+    
+    // Binding to track the selected location
     @Binding var selectedLocation: Location?
     
     var body: some View {
+        // Map view displaying annotations for each location
         Map(coordinateRegion: .constant(region), annotationItems: locations) { location in
             MapAnnotation(coordinate: location.coordinate) {
+                // Button to select a location when tapped
                 Button(action: {
                     selectedLocation = location
                 }) {
@@ -46,6 +33,7 @@ struct MapView: View {
         }
     }
     
+    // Region of the map to be displayed
     private var region: MKCoordinateRegion {
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 6.882728996369276, longitude: 79.93445813475586),

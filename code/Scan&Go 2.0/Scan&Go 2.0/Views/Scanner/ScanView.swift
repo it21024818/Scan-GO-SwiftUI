@@ -108,3 +108,4 @@ struct ScanView_Previews: PreviewProvider {
         ScanView()
     }
 }
+

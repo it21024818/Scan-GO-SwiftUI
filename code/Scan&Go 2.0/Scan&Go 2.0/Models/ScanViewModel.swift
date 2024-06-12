@@ -10,10 +10,12 @@ import Foundation
 import SwiftUI
 import VisionKit
 
+// Enum defining different types of scans
 enum ScanType: String {
     case barcode, text
 }
 
+// Enum defining different types of data scanner access status
 enum DataScannerAccessStatusType {
     case notDetermined
     case cameraAccessNotGranted
@@ -22,28 +24,24 @@ enum DataScannerAccessStatusType {
     case scannerNotAvailable
 }
 
+// ViewModel for handling scanning functionality
 @MainActor
 final class ScanViewModel: ObservableObject {
     
+    // Published properties to update UI
     @Published var dataScannerAccessStatus: DataScannerAccessStatusType = .notDetermined
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var scanType: ScanType = .barcode
     @Published var textContentType: DataScannerViewController.TextContentType?
     @Published var recognizesMultipleItems = true
     
+    // Computed property to determine the recognized data type based on scan type
     var recognizedDataType: DataScannerViewController.RecognizedDataType {
         scanType == .barcode ? .barcode() : .text(textContentType: textContentType)
     }
     
-    var headerText: String {
-        if recognizedItems.isEmpty {
-            return "Scanning \(scanType.rawValue)"
-        } else {
-            return "Recognized \(recognizedItems.count) item(s)"
-        }
-    }
-    
-      var dataScannerViewId: Int {
+    // Computed property to generate unique identifier for the data scanner view
+    var dataScannerViewId: Int {
         var hasher = Hasher()
         hasher.combine(scanType)
         hasher.combine(recognizesMultipleItems)
@@ -53,10 +51,12 @@ final class ScanViewModel: ObservableObject {
         return hasher.finalize()
     }
     
+    // Private property to check if scanner is available
     private var isScannerAvailable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported
     }
     
+    // Method to request data scanner access status asynchronously
     func requestDataScannerAccessStatus() async {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
             dataScannerAccessStatus = .cameraNotAvailable
@@ -83,6 +83,4 @@ final class ScanViewModel: ObservableObject {
             
         }
     }
-    
-    
 }

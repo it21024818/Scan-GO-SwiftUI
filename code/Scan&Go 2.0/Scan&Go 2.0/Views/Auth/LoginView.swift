@@ -9,8 +9,13 @@ import SwiftUI
 import FirebaseAuth
 import LocalAuthentication
 
+// View for user login
 struct LoginView: View {
+    
+    // EnvironmentObject to access user authentication status
     @EnvironmentObject var user: User
+    
+    // State to track biometric availability and type
     @State private var isBiometricAvailable = false
     @State private var biometricType: LABiometryType = .none
 
@@ -21,39 +26,38 @@ struct LoginView: View {
                 Image("scan&goIcon")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 200, height: 200)
                     .clipShape(Circle())
-                    .padding(.top, 10)
 
                 // Sign in label
                 Text("Sign in")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .padding(.top, 20)
                 
                 // Email TextField
                 TextField("Email", text: $user.email)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(10)
+                    .frame(width: 350)
                 
                 // Password SecureField
                 SecureField("Password", text: $user.password)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(10)
+                    .frame(width: 350)
                 
                 // Login Button
                 Button(action: login) {
                     Text("Sign in")
                         .foregroundColor(.white)
                         .padding()
+                        .frame(width:350)
                         .background(Color.orange)
                         .cornerRadius(10)
-                        .frame(maxWidth: .infinity)
                 }
                 .padding(.top)
-                .padding(.horizontal)
                 
                 // Error Message
                 if !user.errorMessage.isEmpty {
@@ -76,18 +80,20 @@ struct LoginView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height: 50)
-                            .foregroundColor(.white)
+                            .foregroundColor(.secondary)
                             .padding()
                             .cornerRadius(10)
                     }
                     .padding(.top, 20)
                 }
             }
-            .padding()
+            .padding(20)
+            .padding(.top, -20)
             .onAppear(perform: checkBiometricAvailability)
         }
     }
     
+    // Function to handle user login
     func login() {
         guard Validator.isValidEmail(for: user.email) && Validator.isPasswordValid(for: user.password) else {
             user.errorMessage = "Invalid email or password."
@@ -105,6 +111,7 @@ struct LoginView: View {
         }
     }
     
+    // Function to authenticate with biometrics
     func authenticateWithBiometrics() {
         let context = LAContext()
         var error: NSError?
@@ -133,6 +140,7 @@ struct LoginView: View {
         }
     }
     
+    // Function to check biometric availability
     func checkBiometricAvailability() {
         let context = LAContext()
         var error: NSError?
@@ -143,5 +151,12 @@ struct LoginView: View {
         } else {
             isBiometricAvailable = false
         }
+    }
+}
+
+// Preview provider for LoginView
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
 }

@@ -8,17 +8,22 @@
 import Foundation
 import FirebaseAuth
 
+// Class representing user details and authentication status
 class User: ObservableObject {
+    
+    // Published properties to update UI
     @Published var fullName: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var isAuthenticated: Bool = false
     @Published var errorMessage: String = ""
     
+    // Initialize user details and check authentication status
     init() {
         loadUserDetails()
     }
     
+    // Method to validate user input
     func isValid() -> Bool {
         if !Validator.isValidUsername(for: fullName) {
             errorMessage = "Invalid full name. It must be 4 to 24 characters long."
@@ -39,6 +44,7 @@ class User: ObservableObject {
         return true
     }
     
+    // Method to load user details if authenticated
     func loadUserDetails() {
         if let currentUser = Auth.auth().currentUser {
             self.fullName = currentUser.displayName ?? ""
@@ -49,6 +55,7 @@ class User: ObservableObject {
         }
     }
     
+    // Method to sign out the user
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -61,6 +68,7 @@ class User: ObservableObject {
         }
     }
     
+    // Method to delete the user account
     func deleteAccount(completion: @escaping (Error?) -> Void) {
         Auth.auth().currentUser?.delete { error in
             if let error = error {
