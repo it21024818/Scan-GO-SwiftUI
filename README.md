@@ -10,35 +10,47 @@
 Screen 1: Login/ Registration/ Forgot Password
 
 ![WhatsApp Image 2024-06-12 at 3 55 06 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/cfa65567-e79b-4382-98ca-606b79604315)
+![WhatsApp Image 2024-06-12 at 3 55 08 PM (1)](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/65b926fe-4d4b-4b35-bd25-278e9d269dfc)
+![WhatsApp Image 2024-06-12 at 3 55 08 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/b7fc97d1-e55b-4366-9595-2b60c9a50d48)
 
 Functionality: Users can either login with existing credentials or create a new account.
 UI Components: Text fields for username/password or email/password, buttons for login and registration.
 
 Screen 2: Home Page
 
-![IMG_5366](https://github.com/SE4020/SE4020-Assignment1-it21024818/assets/87381428/4fc36ee7-85d0-4f7f-872d-d6859f3ad109)
+![WhatsApp Image 2024-06-12 at 3 55 09 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/7bfab357-45a6-4b53-a3d7-3330ab8042bc)
 
-Functionality: Displays current promotions and allows access to product scanning.
-UI Components: Carousel or list showcasing supermarket promotions, button to access the barcode scanner.
+Functionality: Displays the locations of the supermarkets that supports Scan&Go system and their details.
+UI Components: MapKit to dispkay the locations, button to view the details of the locations.
 
 Screen 3: Barcode Scanner
 
-![IMG_5367](https://github.com/SE4020/SE4020-Assignment1-it21024818/assets/87381428/7bebd910-c556-4ccb-ae21-dee57ff4ac7b)
+blob:https://web.whatsapp.com/7f35ff77-7dac-4390-91a3-861e9e3cd01d![image](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/88e4dc59-b8b1-4cb9-815c-0841c5324dfd)
 
-Functionality: Users scan product barcodes using the phone's camera. The app retrieves product information and adds it to the cart upon confirmation.
+Functionality: Users scan product barcodes as well as texts using the phone's camera. The app retrieves product information and adds it to the cart upon confirmation.
 UI Components: Camera viewfinder, confirmation button to add scanned item.
 
 Screen 4: Cart
 
-![IMG_5528](https://github.com/SE4020/SE4020-Assignment1-it21024818/assets/87381428/2cbe48ac-2e77-4ed9-bf04-10fb328ba393)
+![WhatsApp Image 2024-06-12 at 3 55 10 PM (1)](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/35ac8bf6-da20-4ed8-a922-8027e7246d34)
 
 Functionality: Users can review scanned items, adjust quantities, and proceed to checkout.
 UI Components: List of scanned items with names, prices, quantities (if applicable), edit/remove buttons, total amount.
 
 Screen 6: Profile
 
+![WhatsApp Image 2024-06-12 at 3 55 10 PM (2)](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/93e4a101-8a0e-408b-9dff-bbfefd772317)
+
 Functionality: Users can view their profile details, past orders, and manage account settings.
 UI Components: User information (name, email), order history, settings options.
+
+Screen 7: Grocery List
+
+![WhatsApp Image 2024-06-12 at 3 55 09 PM (1)](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/3b5a8891-5931-4a17-a0cc-f5b7737f739f)
+![WhatsApp Image 2024-06-12 at 3 55 10 PM](https://github.com/SE4020/assignment-02-part-a-main-app-it21024818/assets/87381428/4db0d98e-0877-4feb-ab0a-3e24febcb28a)
+
+Functionality: Users can manage their own grocery lists (shopping lists) category wise.
+UI Components: Lists, Picker, TextFields, etc.
 
 #### 05. Give examples of best practices used when writing code
 Error Handling: Implement proper error handling mechanisms to gracefully handle unexpected situations during scanning, payment processing, etc.
