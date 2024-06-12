@@ -18,12 +18,19 @@ final class Scan_Go_2_0Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testTotalPriceCalculation() {
+        // Given
+        let cartItems: [CartItem] = [
+            CartItem(image: Image("butter"), name: "Anchor Butter", price: 400.00, description: "This is item 1", quantity: 1),
+            CartItem(image: Image("juice"), name: "Orange Juice", price: 290.00, description: "This is item 2", quantity: 2),
+        ]
+        let cartView = CartView(cartItems: cartItems)
+        
+        // When
+        let totalPrice = cartView.totalPrice()
+        
+        // Then
+        XCTAssertEqual(totalPrice, "LKR 980.00")
     }
 
     func testPerformanceExample() throws {

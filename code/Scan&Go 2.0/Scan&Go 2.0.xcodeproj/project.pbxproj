@@ -25,6 +25,7 @@
 		9C61AD472C18F7AC004439AD /* WatchProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61AD462C18F7AC004439AD /* WatchProfileView.swift */; };
 		9C7552A22C145A9200F818CE /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7552A12C145A9200F818CE /* KeychainHelper.swift */; };
 		9C7552A52C145AE600F818CE /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 9C7552A42C145AE600F818CE /* KeychainAccess */; };
+		9C785A192C19AE4500EA27EC /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE472BFA7DEB0086AA7A /* CartView.swift */; };
 		9C9C7EF12C1392AF00A8875C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7EF02C1392AF00A8875C /* Location.swift */; };
 		9CB1FE102BFA790A0086AA7A /* Scan_Go_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE0F2BFA790A0086AA7A /* Scan_Go_2_0App.swift */; };
 		9CB1FE122BFA790A0086AA7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE112BFA790A0086AA7A /* ContentView.swift */; };
@@ -521,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C785A192C19AE4500EA27EC /* CartView.swift in Sources */,
 				9CB1FE262BFA79100086AA7A /* Scan_Go_2_0Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
