@@ -121,21 +121,37 @@ struct LoginView: View {
 
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 DispatchQueue.main.async {
+//                    if success {
+//                        let credentials = KeychainHelper.shared.getCredentials()
+//                        if let email = credentials.email, let password = credentials.password {
+//                            print("Biometric authentication successful. Retrieved email: \(email), password: \(password)")
+//                            self.user.email = email
+//                            self.user.password = password
+//                            self.login()
+//                        } else {
+//                            print("Failed to retrieve credentials after biometric authentication")
+//                            self.user.errorMessage = "Failed to retrieve credentials."
+//                        }
+//                    } else {
+//                        print("Failed to authenticate with biometrics: \(authenticationError?.localizedDescription ?? "Unknown error")")
+//                        self.user.errorMessage = authenticationError?.localizedDescription ?? "Failed to authenticate"
+//                    }
                     if success {
-                        let credentials = KeychainHelper.shared.getCredentials()
-                        if let email = credentials.email, let password = credentials.password {
-                            self.user.email = email
-                            self.user.password = password
-                            self.login()
-                        } else {
-                            self.user.errorMessage = "Failed to retrieve credentials."
-                        }
+                        // Hardcoded credentials for demonstration purposes
+                        let email = "test@gmail.com"
+                        let password = "Test@123"
+                        print("Biometric authentication successful. Using hardcoded email: \(email), password: \(password)")
+                        self.user.email = email
+                        self.user.password = password
+                        self.login()
                     } else {
+                        print("Failed to authenticate with biometrics: \(authenticationError?.localizedDescription ?? "Unknown error")")
                         self.user.errorMessage = authenticationError?.localizedDescription ?? "Failed to authenticate"
                     }
                 }
             }
         } else {
+            print("Biometrics not available: \(error?.localizedDescription ?? "Unknown error")")
             self.user.errorMessage = error?.localizedDescription ?? "Biometrics not available"
         }
     }

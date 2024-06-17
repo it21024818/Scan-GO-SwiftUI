@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-// Model for items in the cart
-struct CartItem: Identifiable {
-    let id = UUID()
-    let image: Image
-    let name: String
-    let price: Double
-    let description: String
-    var quantity: Int
-}
-
 // View for displaying the cart
 struct CartView: View {
     @State private var cartItems: [CartItem] = [

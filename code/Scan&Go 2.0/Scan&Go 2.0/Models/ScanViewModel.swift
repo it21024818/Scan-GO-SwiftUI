@@ -51,6 +51,16 @@ final class ScanViewModel: ObservableObject {
         return hasher.finalize()
     }
     
+    // Header text to display
+    var headerText: String {
+        switch scanType {
+        case .barcode:
+            return "Scanning for barcodes"
+        case .text:
+            return "Scanning for text"
+        }
+    }
+    
     // Private property to check if scanner is available
     private var isScannerAvailable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported

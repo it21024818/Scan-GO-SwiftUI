@@ -41,6 +41,13 @@
 		9CB1FE462BFA7DAB0086AA7A /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE452BFA7DAB0086AA7A /* ScanView.swift */; };
 		9CB1FE482BFA7DEB0086AA7A /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE472BFA7DEB0086AA7A /* CartView.swift */; };
 		9CB1FE4A2BFA7E0F0086AA7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1FE492BFA7E0F0086AA7A /* ProfileView.swift */; };
+		9CBFCB0D2C1A2D96001E4A37 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7EF02C1392AF00A8875C /* Location.swift */; };
+		9CBFCB0F2C1A323C001E4A37 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBFCB0E2C1A323C001E4A37 /* GroceryItem.swift */; };
+		9CBFCB102C1A3240001E4A37 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBFCB0E2C1A323C001E4A37 /* GroceryItem.swift */; };
+		9CBFCB122C1A3320001E4A37 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBFCB112C1A3320001E4A37 /* GroceryListViewModel.swift */; };
+		9CBFCB132C1A3320001E4A37 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBFCB112C1A3320001E4A37 /* GroceryListViewModel.swift */; };
+		9CBFCB152C1A3D8E001E4A37 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBFCB142C1A3D8E001E4A37 /* CartItem.swift */; };
+		9CBFCB162C1A3D8E001E4A37 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBFCB142C1A3D8E001E4A37 /* CartItem.swift */; };
 		9CC507E42C13563C0077ED03 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC507E32C13563C0077ED03 /* MapView.swift */; };
 		9CC507E62C1356540077ED03 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC507E52C1356540077ED03 /* CircleImage.swift */; };
 		9CCB49602C048F0900C98AD2 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB495F2C048F0900C98AD2 /* ScanViewModel.swift */; };
@@ -120,6 +127,9 @@
 		9CB1FE452BFA7DAB0086AA7A /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScanView.swift; path = "Scan&Go 2.0/Views/Scanner/ScanView.swift"; sourceTree = SOURCE_ROOT; };
 		9CB1FE472BFA7DEB0086AA7A /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartView.swift; path = "Scan&Go 2.0/CartView.swift"; sourceTree = SOURCE_ROOT; };
 		9CB1FE492BFA7E0F0086AA7A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "Scan&Go 2.0/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
+		9CBFCB0E2C1A323C001E4A37 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
+		9CBFCB112C1A3320001E4A37 /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
+		9CBFCB142C1A3D8E001E4A37 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		9CC507E32C13563C0077ED03 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9CC507E52C1356540077ED03 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		9CCB495F2C048F0900C98AD2 /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
@@ -306,6 +316,9 @@
 				9CCB495F2C048F0900C98AD2 /* ScanViewModel.swift */,
 				9C07528F2C11B6E900DFE620 /* User.swift */,
 				9C9C7EF02C1392AF00A8875C /* Location.swift */,
+				9CBFCB0E2C1A323C001E4A37 /* GroceryItem.swift */,
+				9CBFCB112C1A3320001E4A37 /* GroceryListViewModel.swift */,
+				9CBFCB142C1A3D8E001E4A37 /* CartItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -488,6 +501,10 @@
 				9C61AD342C18F321004439AD /* WatchContentView.swift in Sources */,
 				9C61AD432C18F73E004439AD /* WatchGroceryListView.swift in Sources */,
 				9C61AD322C18F321004439AD /* Scan_GoWatchApp.swift in Sources */,
+				9CBFCB102C1A3240001E4A37 /* GroceryItem.swift in Sources */,
+				9CBFCB132C1A3320001E4A37 /* GroceryListViewModel.swift in Sources */,
+				9CBFCB162C1A3D8E001E4A37 /* CartItem.swift in Sources */,
+				9CBFCB0D2C1A2D96001E4A37 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,11 +520,13 @@
 				9CB1FE192BFA790F0086AA7A /* Persistence.swift in Sources */,
 				9CC507E42C13563C0077ED03 /* MapView.swift in Sources */,
 				9CCB49622C0492DF00C98AD2 /* DataScannerView.swift in Sources */,
+				9CBFCB122C1A3320001E4A37 /* GroceryListViewModel.swift in Sources */,
 				9CCB49602C048F0900C98AD2 /* ScanViewModel.swift in Sources */,
 				9CB1FE122BFA790A0086AA7A /* ContentView.swift in Sources */,
 				9CB1FE442BFA7D5F0086AA7A /* GroceryListView.swift in Sources */,
 				9CB1FE1C2BFA790F0086AA7A /* Scan_Go_2_0.xcdatamodeld in Sources */,
 				9CB1FE422BFA7D130086AA7A /* HomeView.swift in Sources */,
+				9CBFCB0F2C1A323C001E4A37 /* GroceryItem.swift in Sources */,
 				9CC507E62C1356540077ED03 /* CircleImage.swift in Sources */,
 				9C0752982C11B85800DFE620 /* Validator.swift in Sources */,
 				9C0752902C11B6E900DFE620 /* User.swift in Sources */,
@@ -515,6 +534,7 @@
 				9CB1FE482BFA7DEB0086AA7A /* CartView.swift in Sources */,
 				9C7552A22C145A9200F818CE /* KeychainHelper.swift in Sources */,
 				9CB1FE102BFA790A0086AA7A /* Scan_Go_2_0App.swift in Sources */,
+				9CBFCB152C1A3D8E001E4A37 /* CartItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
